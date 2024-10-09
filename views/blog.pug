@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  //- Hero Section
+  section(class="relative bg-gray-900 text-white mb-4")
+    img(src="https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg", alt="Blog Banner", class="w-full h-[70vh] object-cover")
+    div(class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center")
+      div(class="text-center")
+        h1(class="text-4xl md:text-6xl font-bold font-dancingscript mb-4") Our Blog
+        p(class="text-lg md:text-xl") Stay updated with the latest news, trends, and delicious recipes
+
+  //- Blog Post Grid
+  section(class="py-16 bg-gray-100")
+    div(class="container mx-auto px-4")
+      h2(class="text-3xl font-semibold font-dancingscript text-center mb-8") Latest Posts
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+        //- Blog Post 1
+        div(class="bg-white rounded-lg shadow-md overflow-hidden")
+          img(src="https://cdn.pixabay.com/photo/2020/10/05/19/55/hamburger-5630646_1280.jpg", alt="Post 1 Image", class="w-full h-48 object-cover")
+          div(class="p-6")
+            h3(class="text-xl font-bold mb-2") The Ultimate Burger Recipe
+            p(class="text-gray-700 mb-4") Discover the secret to making the juiciest burgers with our step-by-step guide.
+            a(href="/blog/ultimate-burger-recipe", class="text-yellow-500 font-semibold hover:text-yellow-600") Read More →
+
+        //- Blog Post 2
+        div(class="bg-white rounded-lg shadow-md overflow-hidden")
+          img(src="https://cdn.pixabay.com/photo/2021/10/30/12/49/cocktail-6754239_1280.jpg", alt="Post 2 Image", class="w-full h-48 object-cover")
+          div(class="p-6")
+            h3(class="text-xl font-bold mb-2") 5 Cocktails You Must Try This Fall
+            p(class="text-gray-700 mb-4") Warm up this fall with these 5 amazing cocktail recipes!
+            a(href="/blog/fall-cocktails", class="text-yellow-500 font-semibold hover:text-yellow-600") Read More →
+
+        //- Blog Post 3
+        div(class="bg-white rounded-lg shadow-md overflow-hidden")
+          img(src="https://cdn.pixabay.com/photo/2023/03/05/11/02/burger-7831127_1280.jpg", alt="Post 3 Image", class="w-full h-48 object-cover")
+          div(class="p-6")
+            h3(class="text-xl font-bold mb-2") Exploring Regional Burger Styles
+            p(class="text-gray-700 mb-4") Dive into the diverse world of burgers from across the USA.
+            a(href="/blog/regional-burger-styles", class="text-yellow-500 font-semibold hover:text-yellow-600") Read More →
+

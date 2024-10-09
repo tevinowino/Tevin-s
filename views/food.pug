@@ -1,0 +1,72 @@
+extends layout
+
+block content
+  // Hero Section
+  section(class="relative bg-gray-900 text-white")
+    img(src="https://www.eatthis.com/wp-content/uploads/sites/4/2019/06/deep-dish-pizza-chicago.jpg", alt="Tevin's Culinary Delights", class="w-full h-[60vh] object-cover")
+    div(class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center")
+      div(class="text-center")
+        h1(class="text-4xl md:text-6xl font-bold font-dancingscript mb-4") Culinary Excellence
+        p(class="text-xl md:text-2xl mb-8") Explore our diverse menu crafted with passion and precision
+
+
+  each category in ['Appetizers', 'Main Courses', 'Salads', 'Desserts']
+    section(id=category.toLowerCase(), class=`py-16 ${category === 'Main Courses' ? 'bg-yellow-500' : category === 'Desserts' ? 'bg-pink-50' : 'bg-white'}`)
+      div(class="container mx-auto px-4")
+        h2(class="text-3xl font-bold font-dancingscript text-center mb-12")= category
+        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+          each recipe in recipes.filter(r => r.category === category)
+            div(class="bg-white rounded-lg shadow-md overflow-hidden")
+              img(src=recipe.image, alt=recipe.name, class="w-full h-48 object-cover")
+              div(class="p-4")
+                h3(class="text-xl font-semibold mb-2")= recipe.name
+                if recipe.dietaryInfo
+                  div(class="mb-4")
+                    each info in recipe.dietaryInfo
+                      span(class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2")= info
+                p(class="text-lg font-bold text-yellow-500")= `$${recipe.price.toFixed(2)}`
+
+  section(class="py-16 bg-yellow-500")
+    div(class="container mx-auto px-4")
+      h2(class="text-3xl font-bold font-dancingscript text-center mb-12") Chef's Specials
+      div(class="grid grid-cols-1 md:grid-cols-2 gap-8")
+        each special in recipes.filter(r => r.isSpecial)
+          div(class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row")
+            img(src=special.image, alt=special.name, class="w-full md:w-1/2 h-48 md:h-auto object-cover")
+            div(class="p-4 md:w-1/2")
+              h3(class="text-xl font-semibold mb-2")= special.name
+              if special.dietaryInfo
+                div(class="mb-4")
+                  each info in special.dietaryInfo
+                    span(class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2")= info
+              p(class="text-lg font-bold text-yellow-500")= `$${special.price.toFixed(2)}`
+
+  section(class="py-16 bg-green-50")
+    div(class="container mx-auto px-4")
+      h2(class="text-3xl font-bold font-dancingscript text-center mb-12") Seasonal Offerings
+      p(class="text-center text-xl mb-8") Enjoy our specially crafted dishes featuring the best ingredients of the season.
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+        each recipe in recipes.filter(r => r.isSeasonal)
+          div(class="bg-white rounded-lg shadow-md overflow-hidden")
+            img(src=recipe.image, alt=recipe.name, class="w-full h-48 object-cover")
+            div(class="p-4")
+              h3(class="text-xl font-semibold mb-2")= recipe.name
+              if recipe.dietaryInfo
+                div(class="mb-4")
+                  each info in recipe.dietaryInfo
+                    span(class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2")= info
+              p(class="text-lg font-bold text-yellow-500")= `$${recipe.price.toFixed(2)}`
+
+  section(class="py-16 bg-purple-50")
+    div(class="container mx-auto px-4")
+      h2(class="text-3xl font-bold font-dancingscript text-center mb-12") Perfect Pairings
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+        each pairing in recipes.filter(r => r.winePairing)
+          div(class="bg-white rounded-lg shadow-md p-6")
+            h3(class="text-xl font-semibold mb-2")= pairing.name
+            p(class="text-lg mb-2") 
+              span(class="font-semibold") Pairs well with: 
+              span= pairing.winePairing
+            p(class="text-yellow-500 font-bold")= `$${pairing.price.toFixed(2)}`
+
+

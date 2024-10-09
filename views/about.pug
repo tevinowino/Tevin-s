@@ -1,0 +1,77 @@
+extends layout
+
+block content
+  //- Hero Section
+  section(class="relative bg-gray-900 text-white mb-2")
+    img(src="https://cdn.pixabay.com/photo/2020/06/30/15/03/table-5356682_1280.jpg", alt="Special Burger", class="w-full h-[80vh] object-cover")
+    div(class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center")
+      div(class="text-center")
+        h1(class="text-4xl md:text-6xl font-bold font-dancingscript mb-4") About Us
+
+  //- Our Story Section
+  section(class="my-10 px-4")
+    h2(class="text-4xl text-yellow-500 font-semibold text-center mb-6 font-dancingscript") Our Story
+    div(class="flex gap-4 justify-center items-center flex-col md:flex-row")
+      div(class="w-full md:w-1/2 overflow-hidden h-96")
+        img(src="https://studiocph.dk/wp-content/uploads/2024/08/Restaurant-STUDIO-1.jpg", alt="Tevin's Restaurant Interior", class="object-cover h-full w-full")
+      div(class="w-full md:w-1/2 text-gray-800 font-normal text-lg")
+        p()
+          | At Tevin’s, our journey began with a simple idea: bring people together over unforgettable meals and handcrafted cocktails. What started as a small local spot has grown into a beloved dining destination, where every dish tells a story of passion, fresh ingredients, and bold flavors.
+        p()
+          | From the start, we’ve been dedicated to creating an experience that feels like home – a place where food, friends, and great memories come together effortlessly. As we continue to grow, our mission remains the same: serving up moments worth savoring, one plate at a time.
+        p(class="font-extrabold text-2xl font-dancingscript italic text-yellow-500")
+          | Welcome to Tevin’s – where every bite is a new adventure!
+
+  section(class="py-10 bg-yellow-500")
+    div(class="container mx-auto px-4")
+      h2(class="text-3xl font-semibold text-center mb-6 text-white") Our Mission & Values
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center")
+        div(class="p-4 bg-white rounded shadow-md")
+          h3(class="text-xl font-semibold mb-2") Our Mission
+          p() 
+            | To create unforgettable dining experiences that celebrate the joy of good food and great company.
+        div(class="p-4 bg-white rounded shadow-md")
+          h3(class="text-xl font-semibold mb-2") Integrity
+          p() 
+            | We uphold the highest standards in our ingredients, service, and relationships.
+        div(class="p-4 bg-white rounded shadow-md")
+          h3(class="text-xl font-semibold mb-2") Innovation
+          p() 
+            | We embrace creativity, continuously evolving our menu to offer new and exciting experiences.
+        div(class="p-4 bg-white rounded shadow-md")
+          h3(class="text-xl font-semibold mb-2") Community
+          p() 
+            | We believe in giving back and supporting the communities that support us.
+
+  //- Teams Section
+  section(class="py-10")
+    div(class="container mx-auto px-4")
+      h2(class="text-3xl font-semibold text-center mb-6") Meet Our Team
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8")
+        div(class="bg-white rounded shadow-md p-4 text-center")
+          img(src="https://cdn.pixabay.com/photo/2019/11/14/11/10/chef-4625935_1280.jpg", alt="Team Member 1", class="rounded-full mx-auto mb-4")
+          h3(class="font-semibold text-lg") Tevin
+          p(class="text-gray-600") Founder & Chef
+          p() 
+            | Passionate about culinary arts, Tevin brings creativity and flavor to every dish.
+
+        div(class="bg-white rounded shadow-md p-4 text-center")
+          img(src="https://cdn.pixabay.com/photo/2023/04/07/13/36/woman-7906507_1280.jpg", alt="Team Member 2", class="rounded-full mx-auto mb-4")
+          h3(class="font-semibold text-lg") Alexa
+          p(class="text-gray-600") Head Bartender
+          p() 
+            | Expert mixologist who crafts unforgettable cocktails with a twist.
+
+        div(class="bg-white rounded shadow-md p-4 text-center")
+          img(src="https://cdn.pixabay.com/photo/2015/03/11/09/35/african-668398_1280.jpg", alt="Team Member 3", class="rounded-full mx-auto mb-4")
+          h3(class="font-semibold text-lg") Sebastian
+          p(class="text-gray-600") Restaurant Manager
+          p() 
+            | Ensuring every guest has a memorable experience from start to finish.
+
+        div(class="bg-white rounded shadow-md p-4 text-center")
+          img(src="https://media.istockphoto.com/id/1409730044/photo/chef-decorating-a-plate-while-working-at-a-commercial-kitchen.jpg?s=1024x1024&w=is&k=20&c=e3__kzv5sUHDPJt4OvXGI7urxigazsT1qvqrDeZaE5s=", alt="Team Member 4", class="rounded-full mx-auto mb-4")
+          h3(class="font-semibold text-lg") Maria
+          p(class="text-gray-600") Sous Chef
+          p() 
+            | Brings expertise and flair to our kitchen, ensuring quality in every bite.

@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  section(class="relative bg-gray-900 text-white mb-4")
+    img(src="https://cdn.pixabay.com/photo/2016/11/21/12/30/dark-1845065_1280.jpg", alt="Events Banner", class="w-full h-[70vh] object-cover")
+    div(class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center")
+      div(class="text-center")
+        h1(class="text-4xl md:text-6xl font-bold font-dancingscript mb-4") Upcoming Events
+        p(class="text-lg md:text-xl") Join us for exciting events at Tevin's
+
+  section(class="py-16 bg-gray-100")
+    div(class="container mx-auto px-4")
+      h2(class="text-4xl font-semibold font-dancingscript text-center mb-8") What's Happening
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+        
+        div(class="bg-white rounded-lg shadow-md overflow-hidden")
+          img(src="https://cdn.pixabay.com/photo/2022/11/28/20/05/taco-7623097_1280.jpg", alt="Event 1 Image", class="w-full h-48 object-cover")
+          div(class="p-6")
+            h3(class="text-xl font-bold mb-2") Taco Tuesday Special
+            p(class="text-gray-700 mb-4") Join us every Tuesday for our Taco Tuesday special! Enjoy delicious tacos for just $2 each! Come one, come all!
+            p(class="text-black mb-4 font-medium") Date: September 15, 2024 | Time: 5 PM - 9 PM
+            a(href="/events/taco-tuesday", class="text-yellow-500 font-semibold hover:text-yellow-600") Learn More →
+
+        div(class="bg-white rounded-lg shadow-md overflow-hidden")
+          img(src="https://media.istockphoto.com/id/985600914/photo/man-standing-in-the-night-club-with-a-guitar-in-his-hands.jpg?s=612x612&w=0&k=20&c=sHNVlzicE_vuBLiVX5C8gJu3kENWqNbjBCrTafSXEEs=", alt="Event 2 Image", class="w-full h-48 object-cover")
+          div(class="p-6")
+            h3(class="text-xl font-bold mb-2") Live Music Night
+            p(class="text-gray-700 mb-4") Enjoy live music every Friday night while you dine! Come and experience our vibrant atmosphere.
+            p(class="text-black mb-4 font-medium") Date: September 20, 2024 | Time: 7 PM - 10 PM
+            a(href="/events/live-music-night", class="text-yellow-500 font-semibold hover:text-yellow-600") Learn More →
+
+        div(class="bg-white rounded-lg shadow-md overflow-hidden")
+          img(src="https://media.istockphoto.com/id/1303977605/photo/five-cocktails-in-hands-joined-in-celebratory-toast.jpg?s=1024x1024&w=is&k=20&c=EuTb00cSrsjCGO2FrkQ-_6-Diapo_VtIBhn4ieRIQ_s=", alt="Event 3 Image", class="w-full h-48 object-cover")
+          div(class="p-6")
+            h3(class="text-xl font-bold mb-2") Happy Hour Specials
+            p(class="text-gray-700 mb-4") Unwind after work with our happy hour specials! Half-priced drinks and appetizers from 4 PM to 6 PM.
+            p(class="text-black mb-4 font-medium") Date: Ongoing every weekday | Time: 4 PM - 6 PM
+            a(href="/events/happy-hour", class="text-yellow-500 font-semibold hover:text-yellow-600") Learn More →
+
+        div(class="bg-white rounded-lg shadow-md overflow-hidden")
+          img(src="https://cdn.pixabay.com/photo/2018/06/21/15/07/bread-3488727_1280.jpg", alt="Event 4 Image", class="w-full h-48 object-cover")
+          div(class="p-6")
+            h3(class="text-xl font-bold mb-2") Brunch Buffet
+            p(class="text-gray-700 mb-4") Indulge in our delicious brunch buffet every Sunday with a variety of options!
+            p(class="text-black mb-4 font-medium") Date: Every Sunday | Time: 10 AM - 2 PM
+            a(href="/events/brunch-buffet", class="text-yellow-500 font-semibold hover:text-yellow-600") Learn More →
+

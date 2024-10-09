@@ -1,0 +1,117 @@
+extends layout
+
+block content
+    section(class="relative bg-gray-900 text-white")
+      img(src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2023/11/21/FNK_Intsant-Pot-Texas-Style-Chili-Mac_H1.jpg.rend.hgtvcom.1280.960.suffix/1700604212111.jpeg", alt="Special Burger", class="w-full h-[85vh] object-cover")
+      div(class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center")
+        div(class="text-center")
+          h1(class="text-4xl md:text-6xl font-bold font-dancingscript mb-4") Finger lickin' good!
+          p(class="text-xl md:text-2xl mb-8") Indulge in our mouthwatering signature creation
+          div(class='flex flex-col sm:flex-row gap-10 justify-center items-center')
+            a(href="#", class="bg-yellow-300 text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition duration-300") Order Now
+            a(href="#", class="flex justify-center items-center gap-3 bg-black text-white px-8 py-3 rounded-full text-lg font-semibold hover:gap-5 transition duration-500")
+              p Contact Us
+              svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFF" class="size-6")
+                path(stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3")
+
+
+    section(class="py-16 bg-gray-100")
+      div(class="container mx-auto px-4")
+          h2(class="text-4xl font-bold text-center mb-2") Popular Meals
+          div(class="grid grid-cols-1 md:grid-cols-3 gap-8")
+            each recipe in recipes
+              div(class="bg-white rounded-lg shadow-md overflow-hidden")
+                img(src=recipe.image, class="w-full h-48 object-cover")
+                div(class="p-4")
+                  h3(class="text-xl font-semibold mb-2")= recipe.title
+                  p(class="text-gray-600 mb-4 text-sm") Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  div(class="flex justify-between items-center")
+                    span(class="text-lg font-bold text-yellow-500") $12.99
+                    a(href="#", class="bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-yellow-400 transition duration-300") Add to Cart
+
+    section(class="py-16 bg-yellow-500")
+      div(class="container mx-auto px-4 text-center")
+        h2(class="text-4xl font-bold font-dancingscript mb-8 text-white") Upcoming Event: Burger Fest 2024
+        p(class="text-xl mb-8 font-semibold") Join us for a weekend of burger madness! Live music, contests, and of course, plenty of burgers!
+        a(href="#", class="bg-black text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition duration-300") Learn More
+
+    section(class="py-16 bg-white")
+      div(class="container mx-auto px-4")
+        h2(class="text-4xl font-bold font-dancingscript text-center mb-12") What Our Customers Say
+
+        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+          each review in reviews
+            div(class="bg-gray-100 p-8 rounded-lg shadow-md")
+              p(class="text-lg mb-4") #{review.text}
+              p(class="font-semibold") #{review.name}
+
+    section(class="py-16 bg-yellow-500")
+      div(class="container mx-auto px-4")
+        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8")
+          div(class="bg-yellow-700 p-2 text-white rounded-md")
+            h3(class="text-2xl font-bold mb-4") Our Location
+            p 123 Burger Street, Foodville, FL 12345
+            div(class="mt-4")
+              iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2d-73.9!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzAwLjAiTiA3M8KwNTQnMDAuMCJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus", width="100%", height="200", style="border:0;", allowfullscreen="", loading="lazy")
+
+          div(class="bg-yellow-700 p-2 text-white rounded-md")
+            h3(class="text-2xl font-bold mb-4") Contact Us
+            form
+              div(class="mb-4")
+                label(for="name", class="block  text-sm font-bold mb-2") Name
+                input(type="text", id="name", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+              div(class="mb-4")
+                label(for="email", class="block  text-sm font-bold mb-2") Email
+                input(type="email", id="email", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+              div(class="mb-4")
+                label(for="message", class="block  text-sm font-bold mb-2") Message
+                textarea(id="message", rows="4", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+              button(type="submit", class="bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-yellow-400 transition duration-300") Send Message
+
+          div(class="bg-yellow-700 p-2 text-white rounded-md")
+            h3(class="text-2xl font-bold mb-4") Open Hours
+            ul(class="space-y-2")
+              each day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                li
+                  span(class="font-semibold")= day
+                  span : 11:00 AM - 10:00 PM
+
+          div(class="bg-yellow-700 p-2 text-white rounded-md")
+            h3(class="text-2xl font-bold font-dancingscript mb-4") Order Now
+            form
+              div(class="mb-4")
+                label(for="order-name", class="block text-gray-700 text-sm font-bold mb-2") Name
+                input(type="text", id="order-name", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+              div(class="mb-4")
+                label(for="order-phone", class="block text-gray-700 text-sm font-bold mb-2") Phone
+                input(type="tel", id="order-phone", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+              div(class="mb-4")
+                label(for="order-meal", class="block text-gray-700 text-sm font-bold mb-2") Select Meal
+                select(id="order-meal", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+                  option(value="") Choose a meal
+                  option(value="classic") Classic Burger
+                  option(value="cheese") Cheeseburger
+                  option(value="veggie") Veggie Burger
+              button(type="submit", class="bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-yellow-400 transition duration-300") Place Order
+
+    section(class="py-16 bg-white")
+      div(class="container mx-auto px-4")
+        h2(class="text-3xl font-bold text-center mb-8") Make a Reservation
+        form(class="max-w-lg mx-auto")
+          div(class="mb-4")
+            label(for="res-name", class="block text-gray-700 text-sm font-bold mb-2") Name
+            input(type="text", id="res-name", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+          div(class="mb-4")
+            label(for="res-email", class="block text-gray-700 text-sm font-bold mb-2") Email
+            input(type="email", id="res-email", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+          div(class="mb-4")
+            label(for="res-date", class="block text-gray-700 text-sm font-bold mb-2") Date
+            input(type="date", id="res-date", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+          div(class="mb-4")
+            label(for="res-time", class="block text-gray-700 text-sm font-bold mb-2") Time
+            input(type="time", id="res-time", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+          div(class="mb-4")
+            label(for="res-guests", class="block text-gray-700 text-sm font-bold mb-2") Number of Guests
+            input(type="number", id="res-guests", min="1", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+          button(type="submit", class="bg-yellow-500 text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition duration-300 w-full") Reserve Now
+

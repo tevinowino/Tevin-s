@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  //- Hero Section
+  section(class="relative bg-gray-900 text-white")
+    img(src="https://c.ndtvimg.com/2023-05/g6hd9p5g_sugar-free-summer-drinks_625x300_02_May_23.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350", alt="Tevin's Drink Selection", class="w-full h-[60vh] object-cover")
+    div(class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center")
+      div(class="text-center")
+        h1(class="text-4xl md:text-6xl font-bold font-dancingscript mb-4") Quench Your Thirst
+        p(class="text-xl md:text-2xl mb-8") Discover our handcrafted beverages and extensive drink menu
+
+  //- Signature Cocktails Section
+  section#signature-cocktails(class="py-16")
+    div(class="container mx-auto px-4")
+      h2(class="text-4xl font-bold font-dancingscript text-center mb-12") Signature Cocktails
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+        each drink in drinks
+          div(class="bg-white rounded-lg shadow-md overflow-hidden")
+            img(src=drink.strDrinkThumb, class="w-full h-48 object-cover")
+            div(class="p-4")
+              h3(class="text-xl font-semibold mb-2")=drink.strDrink
+
+  //- Craft Beers Section
+  section#craft-beers(class="py-16 bg-yellow-500")
+    div(class="container mx-auto px-4")
+      h2(class="text-4xl font-bold font-dancingscript text-center mb-12") Craft Beers on Tap
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+        each beer in breweries
+          div(class="bg-white rounded-lg shadow-md p-6")
+            h3(class="text-xl font-semibold mb-2")= beer.name
+            p(class="text-gray-600 mb-1")= beer.brewery
+            p(class="text-sm text-gray-500 mb-2") ABV: #{beer.abv}
+            p(class="text-lg font-bold text-yellow-500")= beer.price
+

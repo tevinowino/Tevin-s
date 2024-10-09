@@ -1,0 +1,96 @@
+extends layout
+
+block content
+  //- Hero Section
+  section(class="relative bg-gray-900 text-white mb-4")
+    img(src="https://www.pmtoday.co.uk/wp-content/uploads/2021/09/restaurant-services.jpg", alt="Tevin's Restaurant Services", class="w-full h-[60vh] object-cover")
+    div(class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center")
+      div(class="text-center")
+        h1(class="text-4xl md:text-6xl font-bold font-dancingscript mb-4") Our Services
+        p(class="text-xl md:text-2xl mb-8") Exceptional dining experiences for every occasion
+
+  //- Services Overview Section
+  section(class="py-16 bg-white")
+    div(class="container mx-auto px-4")
+      h2(class="text-4xl font-bold text-yellow-500 font-dancingscript text-center mb-12") What We Offer
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+        each service in ['Dine-In', 'Takeaway', 'Delivery', 'Catering', 'Private Events', 'Gift Cards']
+          div(class="bg-gray-100 rounded-lg shadow-md p-6 text-center")
+            h3(class="text-xl font-semibold mb-2")= service
+            p(class="text-gray-600") 
+              if service === 'Dine-In'
+                | Enjoy a warm and welcoming atmosphere where you can savor our chef's special creations made with the freshest ingredients.
+              else if service === 'Takeaway'
+                | Craving our delicious meals at home? Order takeaway and experience the same great taste wherever you are!
+              else if service === 'Delivery'
+                | Get your favorite dishes delivered straight to your doorstep with our convenient delivery service.
+              else if service === 'Catering'
+                | Make your events unforgettable with our professional catering services, tailored to meet your needs and exceed your expectations.
+              else if service === 'Private Events'
+                | Host your special occasions in style with personalized service and a customizable menu just for you.
+              else if service === 'Gift Cards'
+                | Share the joy of great food! Our gift cards make the perfect present for food lovers in your life.
+
+  //- Catering Services Section
+  section(class="py-16 bg-yellow-500")
+    div(class="container mx-auto px-4")
+      div(class="flex flex-wrap items-center")
+        div(class="w-full md:w-1/2 mb-8 md:mb-0")
+          img(src="https://media.licdn.com/dms/image/D5612AQEm62hYmINu4g/article-cover_image-shrink_600_2000/0/1700656734556?e=2147483647&v=beta&t=ycVtNIXrVl7LSpBVPoJ2SLF7OmkGIRkS5qZrrUPKrbg", alt="Tevin's Catering Service", class="rounded-lg shadow-lg")
+        div(class="w-full md:w-1/2 md:pl-8")
+          h2(class="text-3xl font-bold font-dancingscript mb-4") Catering Services
+          p(class="text-lg mb-6") Whether it's a wedding, corporate gathering, or birthday celebration, Tevin's catering brings culinary excellence to your events.
+          ul(class="list-disc list-inside mb-6")
+            li(class="mb-2") Customized menu options to fit your theme and budget
+            li(class="mb-2") Professional and friendly staff to serve you
+            li(class="mb-2") Equipment rental available for a complete setup
+            li(class="mb-2") Flexible serving styles, including buffet, plated, and family-style
+          a(href="#", class="bg-black text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition duration-300") Get a Quote
+
+  //- Private Event Section
+  section(class="py-16 bg-white")
+    div(class="container mx-auto px-4")
+      h2(class="text-3xl font-bold font-dancingscript text-center mb-12") Host Your Private Event
+      div(class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center")
+        div
+          img(src="https://cdn.sanity.io/images/il6iboyf/production/4388fd58e46a1bc4aaecfc4a0679690a9c6d4d17-2880x1760.png?w=960&auto=format", alt="Private Event at Tevin's", class="rounded-lg shadow-lg")
+        div
+          h3(class="text-2xl font-semibold mb-4") Memorable Celebrations
+          p(class="text-lg mb-6") Celebrate your special occasions with us! From intimate gatherings to large parties, Tevin's provides the perfect setting for all your events.
+          ul(class="list-disc list-inside mb-6")
+            li(class="mb-2") Versatile space accommodating up to 100 guests
+            li(class="mb-2") Customized menus to suit your tastes
+            li(class="mb-2") Audio-visual equipment for presentations and entertainment
+            li(class="mb-2") Dedicated event coordinator to assist you throughout
+          a(href="#", class="bg-yellow-500 text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition duration-300") Inquire Now
+
+  //- Gift Cards Section
+  section(class="py-16 bg-black text-white")
+    div(class="container mx-auto px-4 text-center")
+      h2(class="text-3xl font-bold font-dancingscript mb-8") Give the Gift of Great Food
+      p(class="text-xl mb-8") Treat your loved ones to a delicious experience with Tevin's gift cards—perfect for any occasion.
+      a(href="#", class="bg-yellow-500 text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition duration-300") Purchase a Gift Card
+
+  //- Request a Service Section
+  section(class="py-16 bg-white")
+    div(class="container mx-auto px-4")
+      h2(class="text-3xl font-bold text-center mb-8") Request a Service
+      form(class="max-w-lg mx-auto")
+        div(class="mb-4")
+          label(for="name", class="block text-gray-700 text-sm font-bold mb-2") Name
+          input(type="text", id="name", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+        div(class="mb-4")
+          label(for="email", class="block text-gray-700 text-sm font-bold mb-2") Email
+          input(type="email", id="email", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+        div(class="mb-4")
+          label(for="service", class="block text-gray-700 text-sm font-bold mb-2") Service Type
+          select(id="service", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+            option(value="") Select a service
+            option(value="catering") Catering
+            option(value="private-event") Private Event
+            option(value="gift-card") Gift Card
+            option(value="other") Other
+        div(class="mb-4")
+          label(for="message", class="block text-gray-700 text-sm font-bold mb-2") Message
+          textarea(id="message", rows="4", class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+        button(type="submit", class="bg-yellow-500 text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition duration-300 w-full") Submit Request

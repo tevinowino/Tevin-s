@@ -1,0 +1,76 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Tevin
+    link(href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css", rel="stylesheet")
+    script(src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js", defer)
+    link(rel='stylesheet', href='/css/output.css')
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600..700&display=swap" rel="stylesheet")
+  body
+    header
+      nav(class="fixed w-full top-0 bg-white shadow-md z-50" x-data="{ isOpen: false }")
+        div(class="container mx-auto px-4 py-4 flex justify-between items-center")
+          a(href="/", class="text-4xl font-bold font-dancingscript text-yellow-600 italic") Tevin's
+          
+          
+          div(class="hidden md:flex space-x-4")
+              a(href="/", class="text-black hover:text-yellow-500 ") Home
+              a(href="/about", class="text-black hover:text-yellow-500") About
+              a(href="/blog", class="text-black hover:text-yellow-500") Blog
+              a(href="/events", class="text-black hover:text-yellow-500") Events
+              a(href="/gallery", class="text-black hover:text-yellow-500") Gallery
+              a(href="/services", class="text-black hover:text-yellow-500") Services
+              a(href="/food", class="text-black hover:text-yellow-500") Food
+              a(href="/drinks", class="text-black hover:text-yellow-500") Drinks
+
+          button(class="md:hidden", @click="isOpen = !isOpen")
+            svg(class="w-6 h-6", fill="none", stroke="currentColor", viewBox="0 0 24 24", xmlns="http://www.w3.org/2000/svg")
+              path(stroke-linecap="round", stroke-linejoin="round", stroke-width="2", d="M4 6h16M4 12h16M4 18h16")
+
+        div(class="md:hidden", x-show="isOpen", @click.away="isOpen = false")
+          div(class="px-2 pt-2 pb-3 space-y-1 sm:px-3")
+              a(href="/", class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50") Home
+              a(href="/about", class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50") About
+              a(href="/blog", class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50") Blog
+              a(href="/events", class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50") Events
+              a(href="/gallery", class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50") Gallery
+              a(href="/services", class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50") Services
+              a(href="/food", class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50") Food
+              a(href="/drinks", class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50") Drinks
+
+    main(class="pt-[85px]")   
+      block content
+    footer(class="bg-yellow-500 text-white py-8")
+
+      div(class="container mx-auto px-4")
+        div(class="flex flex-wrap justify-between items-center")
+          div(class="w-full md:w-1/3 text-center md:text-left mb-4 md:mb-0")
+            h3(class="text-2xl font-bold") Tevin's Restaurant
+            p 123 Burger Street, Foodville, FL 12345
+            p Tel: (123) 456-7890
+          
+          div(class="w-full md:w-1/3 text-center mb-4 md:mb-0")
+            h4(class="text-lg font-semibold mb-2") Connect With Us
+            div(class="flex justify-center space-x-4")
+              a(href="#", class="text-white hover:text-yellow-500")
+                svg(class="w-6 h-6", fill="currentColor", viewBox="0 0 24 24", aria-hidden="true")
+                  path(fill-rule="evenodd", d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z")
+              a(href="#", class="text-white hover:text-yellow-500")
+                svg(class="w-6 h-6", fill="currentColor", viewBox="0 0 24 24", aria-hidden="true")
+                  path(fill-rule="evenodd", d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.957-2.178-1.555-3.594-1.555-2.72 0-4.92 2.201-4.92 4.917 0 .39.045.765.128 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.733-.666 1.585-.666 2.491 0 1.72.873 3.239 2.201 4.129-.81-.026-1.566-.249-2.228-.616v.061c0 2.401 1.708 4.399 3.977 4.853-.416.113-.855.171-1.307.171-.319 0-.632-.031-.934-.088.631 1.966 2.445 3.396 4.6 3.437-1.68 1.319-3.809 2.104-6.115 2.104-.397 0-.79-.023-1.174-.068 2.179 1.398 4.768 2.213 7.557 2.213 9.054 0 14.001-7.496 14.001-13.986 0-.213-.006-.425-.015-.637.961-.694 1.8-1.562 2.457-2.549z")
+
+          div(class="w-full md:w-1/3 text-center md:text-right text-yellow-800")
+            h4(class="text-lg font-semibold mb-2") Visit Our Branches
+            p(class="text-black") Burger City, FL
+            p(class="text-black") Grill Town, CA
+            p(class="text-black") Steak Street, NY
+
+      //- Bottom Text
+      div(class="text-center mt-6")
+        p(class="text-black") &copy; 2024 Tevin's Restaurant. All rights reserved.
+
+    script(src='/script.js')
